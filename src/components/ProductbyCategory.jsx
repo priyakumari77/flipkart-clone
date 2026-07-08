@@ -12,7 +12,7 @@ const ProductbyCategory = ({category})=>{
 
     async function fetchProductbyCategory(){
         try {
-            const res = await axios.get(" https://flipkert-backend.onrender.com/user/fetch-all-products",
+            const res = await axios.get(" https://flipkart-backend-0rv2.onrender.com//user/fetch-all-products",
                 {
                   
                     params:{

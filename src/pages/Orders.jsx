@@ -12,7 +12,7 @@ function Orders(){
         try {
             setLoading(true)
             const token = localStorage.getItem("token")
-            const res = await axios.get("https://flipkert-backend.onrender.com/user/fetch-user",
+            const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/fetch-user",
                 {headers:{
         authorization:token
       }})

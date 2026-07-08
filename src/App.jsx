@@ -31,7 +31,7 @@ function App() {
       if (token) {
         dispatch(login(token));
         const res = await axios.get(
-          "https://flipkert-backend.onrender.com/user/fetch-user",
+          "https://flipkart-backend-0rv2.onrender.com//user/fetch-user",
           {
             headers: { authorization: token },
           }

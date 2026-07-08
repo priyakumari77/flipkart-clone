@@ -28,7 +28,7 @@ const Login =()=>{
         
         try {
             setloading(true)
-            const res = await axios.post("https://flipkert-backend.onrender.com/user/resend-otp",{
+            const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/resend-otp",{
                 "email" : email,
             })
             console.log(res.data)
@@ -53,7 +53,7 @@ const Login =()=>{
      async function verifyOtp(otp){
         try {
             setloading(true)
-             const res = await axios.post("https://flipkert-backend.onrender.com/user/verify-otp",{
+             const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/verify-otp",{
                 "email" : email,
                  "otp": Number(otp),
              })

@@ -27,7 +27,7 @@ const ProductDetails = () => {
   async function fetchProductDetail() {
     try {
       setLoading(true)
-      const res = await axios.get("https://flipkert-backend.onrender.com/user/fetch-single-product", {
+      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/fetch-single-product", {
         params: { "productId": id, }
       })
       console.log(res.data)
@@ -58,7 +58,7 @@ const ProductDetails = () => {
       setLoading(true)
       const token = localStorage.getItem("token")
       if (token) {
-        const res = await axios.post("https://flipkert-backend.onrender.com/user/add-to-cart", {
+        const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/add-to-cart", {
           productId: product._id,
           color: color,
           size: size,
@@ -88,7 +88,7 @@ const ProductDetails = () => {
       setLoading(true)
       const token = localStorage.getItem("token")
       if (token) {
-        const res = await axios.post("https://flipkert-backend.onrender.com/user/place-single-order", {
+        const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/place-single-order", {
           productId: product._id,
           color: color,
           size: size,
@@ -118,7 +118,7 @@ const ProductDetails = () => {
     setLoading(true)
     const { data } = await axios.post(
 
-      "https://flipkert-backend.onrender.com/user/create-payment-order",
+      "https://flipkart-backend-0rv2.onrender.com//user/create-payment-order",
       {
         amount: Number(product.price),
         currency: "INR",
@@ -145,7 +145,7 @@ const ProductDetails = () => {
       order_id: data.data.id,
       handler: async (response) => {
         let verifyResponse = await axios.post(
-          "https://flipkert-backend.onrender.com/user/verify-payment",
+          "https://flipkart-backend-0rv2.onrender.com//user/verify-payment",
           {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,

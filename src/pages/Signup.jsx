@@ -26,7 +26,7 @@ const Signup=()=>{
          
        try {
            setloading(true)
-          const res = await axios.post("https://flipkert-backend.onrender.com/user/otp-send",
+          const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/otp-send",
              {
                  "email":email,
 
@@ -48,7 +48,7 @@ const Signup=()=>{
     async function verifyOtp(otp){
         try {
              setloading(true)
-            const res = await axios.post("https://flipkert-backend.onrender.com/user/verify-otp" ,
+            const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/verify-otp" ,
              {
                "email":email,
                "otp":Number(otp),

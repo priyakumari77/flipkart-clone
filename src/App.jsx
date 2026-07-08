@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/flipkart-clone">
         <Navbar />
         <ScrollToTop />
 

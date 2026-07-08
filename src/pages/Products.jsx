@@ -45,7 +45,7 @@ const Products = () => {
         return;
       }
       const res = await axios.post(
-        "https://flipkart-backend-0rv2.onrender.com//user/add-to-cart",
+        "https://flipkart-backend-0rv2.onrender.com/user/add-to-cart",
         {
           productId: item._id,
           color: item.colorCategory && item.colorCategory[0].color,
@@ -72,7 +72,7 @@ const Products = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        "https://flipkart-backend-0rv2.onrender.com//user/fetch-all-products",
+        "https://flipkart-backend-0rv2.onrender.com/user/fetch-all-products",
         {
           params: {
             category: filterCategory,
@@ -98,7 +98,7 @@ const Products = () => {
   async function fetchUser() {
     try {
       const token = localStorage.getItem("token")
-      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/fetch-user", {
+      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com/user/fetch-user", {
         headers: { authorization: token }
       })
       console.log(res.data)
@@ -120,7 +120,7 @@ const Products = () => {
 
     try {
       const token = localStorage.getItem("token")
-      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/add-to-wishlist", {
+      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/add-to-wishlist", {
 
         "productId": item._id,
         color: item.colorCategory && item.colorCategory[0].color,
@@ -155,7 +155,7 @@ const Products = () => {
     try {
 
       const token = localStorage.getItem('token')
-      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/remove-from-wishlist",
+      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/remove-from-wishlist",
         {
           "productId": item._id,
           color: item.colorCategory && item.colorCategory[0].color,

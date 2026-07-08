@@ -12,7 +12,7 @@ const ProductbyCategory = ({category})=>{
 
     async function fetchProductbyCategory(){
         try {
-            const res = await axios.get(" https://flipkart-backend-0rv2.onrender.com//user/fetch-all-products",
+            const res = await axios.get(" https://flipkart-backend-0rv2.onrender.com/user/fetch-all-products",
                 {
                   
                     params:{
@@ -22,8 +22,8 @@ const ProductbyCategory = ({category})=>{
                 }
             )
 
-            console.log(res.data)
-            setProducts(res.data.data)
+            console.log("product by category",res.data)
+            setProducts(res.data?.data??[])
         } catch (error) {
             console.log(error)
         }

@@ -20,7 +20,7 @@ const Wishlist =()=>{
     try {
       // setLoading(true)
       const token = localStorage.getItem("token")
-      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/fetch-user",{headers:{
+      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com/user/fetch-user",{headers:{
         authorization:token
       }})
       console.log("Hiiiiiiiiiiii");
@@ -45,7 +45,7 @@ const Wishlist =()=>{
   //   async function fetchAddWishlist(item){
   //   try {
   //     const token = localStorage.getItem('token')
-  //     const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/add-to-wishlist",{
+  //     const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/add-to-wishlist",{
   //   "productId":item._id,
   //   "color":item.product.color, 
   //    },
@@ -72,7 +72,7 @@ const Wishlist =()=>{
       console.log("Hiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       
       const token = localStorage.getItem('token')
-      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/remove-from-wishlist",
+      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/remove-from-wishlist",
         {
     "productId":item._id,
     "color":item.color, 

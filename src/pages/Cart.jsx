@@ -30,7 +30,7 @@ console.log(cart)
     try {
       setLoading(true)
       const token = localStorage.getItem("token")
-      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/fetch-user",{headers:{
+      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com/user/fetch-user",{headers:{
         authorization:token
       }})
       console.log(res.data)
@@ -51,7 +51,7 @@ console.log(cart)
  async function removeFromCart(item){
   try{
     const token = localStorage.getItem("token")
-  const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/remove-from-cart",
+  const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/remove-from-cart",
     {
     "productId":item.product._id,
     "color":item.product.color, 
@@ -75,7 +75,7 @@ console.log(cart)
   try{
     setRemoveLoading(true)
     const token = localStorage.getItem("token")
-    const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/clear-cart",{
+    const res = await axios.get("https://flipkart-backend-0rv2.onrender.com/user/clear-cart",{
       headers:{
         authorization:token
       }
@@ -95,7 +95,7 @@ console.log(cart)
  async function placeOrder(){
   try {
     const token=localStorage.getItem("token")
-    const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/place-order-from-cart",{headers:{
+    const res = await axios.get("https://flipkart-backend-0rv2.onrender.com/user/place-order-from-cart",{headers:{
       authorization :token
     }})
     console.log(res.data)
@@ -113,7 +113,7 @@ console.log(cart)
     try {
       setRemoveLoading(true)
       const token = localStorage.getItem("token")
-      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/add-to-cart",{
+      const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/add-to-cart",{
             "productId":item.product._id,
          "color":item.product.color, 
         "size":item.product.size, 
@@ -144,7 +144,7 @@ console.log(cart)
   setLoading(true)
   const { data } = await axios.post(
       
-      "https://flipkart-backend-0rv2.onrender.com//user/create-payment-order",
+      "https://flipkart-backend-0rv2.onrender.com/user/create-payment-order",
       {
         amount: Number(totalPrice),
         currency: "INR",
@@ -169,7 +169,7 @@ console.log(cart)
       order_id: data.data.id,
       handler: async (response) => {
         let verifyResponse = await axios.post(
-          "https://flipkart-backend-0rv2.onrender.com//user/verify-payment",
+          "https://flipkart-backend-0rv2.onrender.com/user/verify-payment",
           {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,

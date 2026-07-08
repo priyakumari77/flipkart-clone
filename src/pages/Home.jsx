@@ -14,7 +14,7 @@ const Home = () => {
   async function getCategory() {
     try {
       const res = await axios.get(
-        "https://flipkart-backend-0rv2.onrender.com//user/fetch-all-categories"
+        "https://flipkart-backend-0rv2.onrender.com/user/fetch-all-categories"
       );
       console.log(res.data);
       console.log(res.data.data);

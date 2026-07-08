@@ -18,7 +18,7 @@ const ProfileDetails =()=>{
     try {
      
       const token = localStorage.getItem("token")
-      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com//user/fetch-user",{headers:{
+      const res = await axios.get("https://flipkart-backend-0rv2.onrender.com/user/fetch-user",{headers:{
         authorization:token
       }})
       console.log(res.data)
@@ -42,7 +42,7 @@ const ProfileDetails =()=>{
    async function updateUserName(){
     try {
         const token = localStorage.getItem("token")
-        const res = await axios.post("https://flipkart-backend-0rv2.onrender.com//user/user-details-update",{
+        const res = await axios.post("https://flipkart-backend-0rv2.onrender.com/user/user-details-update",{
             "username":name
         },{headers:{authorization:token}})
         console.log(res.data)
@@ -55,7 +55,7 @@ const ProfileDetails =()=>{
   async function updatephNumber(){
     try{
         const token=localStorage.getItem("token")
-        const res= await axios.post("https://flipkart-backend-0rv2.onrender.com//user/user-details-update",{
+        const res= await axios.post("https://flipkart-backend-0rv2.onrender.com/user/user-details-update",{
             "phone":phNumber
         },{headers:{authorization:token}})
         console.log(res.data)
@@ -68,7 +68,7 @@ const ProfileDetails =()=>{
   async function updateAddress(){
     try {
         const token=localStorage.getItem("token")
-        const res=await axios.post("https://flipkart-backend-0rv2.onrender.com//user/user-details-update",{
+        const res=await axios.post("https://flipkart-backend-0rv2.onrender.com/user/user-details-update",{
             "address":address
         },{headers:{authorization:token}})
         console.log(res.data)

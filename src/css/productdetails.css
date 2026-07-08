@@ -1,0 +1,240 @@
+
+.productdetails-main{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.ratings-review{
+    display: flex;
+}
+.price-row{
+    display: flex;
+}
+.button button{
+    padding: 15px;
+    flex: 1;
+    cursor: pointer;
+    
+    
+    
+}
+.button{
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+ 
+  
+}
+.addtocart-button{
+    background:#ff9f00;
+       border-width: 0px;
+       font-weight: bold;
+       color: white;
+       font-size: 16px;
+}
+.addtocart-icon{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.buynow-button{
+     background:#fb641b;
+        border-width: 0px;
+         font-weight: bold;
+       color: white;
+       font-size: 16px;
+}
+.buynow-icon{
+    font-size: 18px;
+     margin-right: 5px;
+}
+
+.left-section img{
+    height:100%;
+    width: 100%;
+    align-self: center;
+    object-fit: cover;
+}
+
+.product-img{
+    height: 75vh;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left-section{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.right-section h3,.right-section h4{
+    margin: 0px;
+}
+.right-section{
+    flex:2;
+}
+
+.ratings{
+    background: green;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    
+   
+}   
+.ratings-review{
+    gap:12px;
+    cursor: pointer;
+    
+}
+
+.review-count{
+    font-weight: bold;
+    color: grey;
+}
+
+.price-row{
+    gap: 10px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+.price-row p{
+  font-weight: bold;
+  font-size: 20px;
+  
+}
+.price-row h5{
+    color: grey;
+    font-size:14px;
+    text-decoration: line-through;
+    
+    
+}
+.price-row h6{
+    color: green;
+    font-weight: bold;
+}
+
+.offers strong{
+    margin: 4px;
+   
+}
+.offers p{
+     display: flex;
+    align-items: center;
+}
+.offers span{
+    font-weight: bold;
+    color: steelblue;
+    cursor: pointer;
+    
+}
+
+.coupon-icon{
+    color: green;
+    margin-right: 10px;
+}
+
+.description-style{
+    display: flex;
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 20px;
+
+
+}
+.description-style h4{
+    color: grey;
+}
+.description-style p{
+    margin: 0;
+}
+
+.right-section{
+    margin: 4px;
+}
+
+.hightlight-section{
+    display: flex;
+}
+
+.hightlight-section h4{
+    color: gray;
+   margin-left: 8px;
+   margin-right: 8px;
+}
+.list-section{
+   display: flex;
+   flex-direction: column;
+   
+}
+
+.Important-notes{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.Important-notes h4{
+    color: gray;
+}
+
+.color-box{
+    color: grey;
+    display: flex;
+    gap: 10px;
+}
+.color-list{
+    display: flex;
+     gap: 10px;
+    
+}
+
+.color-item{
+    height: 74px;
+    width: 60px;
+}
+
+.color-item img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.selectedColor{
+    border: 2px solid #2874f0
+}
+.prod-size{
+    display: flex;
+    gap: 14px;
+}
+.product-size{
+    display: flex;
+    gap: 14px;
+    
+}
+
+.prod-size h4{
+    color: grey;
+
+}
+.p-size{
+    font: 18px inter;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+     
+    height: 30px;
+    width: 30px;
+    padding: 4px;
+    margin-bottom: 8px;
+    text-align: center;
+    background: lightgrey;
+    margin-top: 10px;
+
+}

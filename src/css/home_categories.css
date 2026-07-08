@@ -1,0 +1,29 @@
+.home_main{
+    /* background: rgb(230, 226, 226); */
+      background: white;
+    height: 100%;
+    
+}
+.home_categories{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background: white;
+    justify-content: center;
+    align-items: baseline;
+   
+    
+}
+.categories_item{
+ 
+ width: 150px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: end;
+ 
+}
+
+.categories_item img{
+  flex:1;
+}

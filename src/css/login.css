@@ -1,0 +1,85 @@
+.login_wrapper{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 90vh;
+    background-color: #f1f3f6;
+     /* font-family: Arial, sans-serif; */
+     
+}
+.login_container{
+
+   display: flex;
+   width: 700px;
+  /* padding: 50px; */
+  /* background: violet; */
+  border-radius: 10px;
+   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+   height: 90%;
+   align-items: center;
+   background: white;
+}
+
+.left_section{
+      background-color: #2874f0;
+      padding: 30px 20px;
+      width: 40%;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     height: 88.5%;
+     
+}
+.left_section img{
+    margin-top: 20px;
+    width: 100%;
+}
+.right_section{
+    padding: 30px 20px;
+   width: 60%;
+   background: white;
+}
+.right_section form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.right_section input{
+    /* width: 90%; */
+    padding: 12px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    
+}
+.right_section p{
+    font-size: 12px;
+    color: #878787;
+    margin-bottom: 16px;
+    
+}
+.right_section button{
+    padding: 12px;
+    width: 100%;
+      background-color: #fb641b;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      margin-bottom: 16px;
+      cursor: pointer;
+}
+
+.right_section p{
+    color: #2874f0;
+}
+
+.create_account{
+    text-align: center;
+    font-size: 30px;
+}
+
+.create-account span {
+  color: #2874f0;
+  cursor: pointer;
+}

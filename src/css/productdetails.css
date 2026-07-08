@@ -5,6 +5,21 @@
     gap: 10px;
 }
 
+.product-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-name{
+    font-weight: bold;
+    font-size: large;
+}
+
+.text-blue{
+    color: rgb(38, 154, 207);
+    margin-left: 12px;
+}
+
 .ratings-review{
     display: flex;
 }
@@ -54,6 +69,7 @@
     width: 100%;
     align-self: center;
     object-fit: cover;
+   
 }
 
 .product-img{
@@ -61,6 +77,8 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    
+    
 }
 
 .left-section{

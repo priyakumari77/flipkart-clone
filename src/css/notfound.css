@@ -1,0 +1,28 @@
+
+.notfound-div{
+    text-align: center;
+    min-height: 60vh;
+    padding: 50px;
+}
+
+.notfound-div h1{
+    font-size: 100px;
+     color: #1976d2;
+}
+.notfound-div h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+.notfound-div p{
+    margin-bottom: 20px;
+}
+
+.home-link{
+    padding: 10px 20px;
+     background-color: #1976d2;
+     color: white;
+     text-decoration: none;
+     border-radius: 5px;
+     font-weight: bold;
+}

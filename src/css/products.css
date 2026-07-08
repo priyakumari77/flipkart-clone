@@ -6,7 +6,7 @@
    /* justify-content: space-between; */
    gap :20px;
    padding: 20px;
-
+min-height: 60vh;
 
     
 }
@@ -16,8 +16,10 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 23%;
+    position: relative;
     
 }
+
 .product-item img:hover{
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -42,7 +44,5 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
    /* transition: transform 0.3s ease; */
-
-
 }
    

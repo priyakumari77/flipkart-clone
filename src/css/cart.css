@@ -6,6 +6,7 @@
   justify-content: center;
   background-color: #f5f5f5;
   flex-direction: column;
+  
 }
 
 .product-card {
@@ -17,6 +18,7 @@
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: 0.3s ease;
+  
 }
 
 .product-card:hover {
@@ -63,11 +65,62 @@
 }
 
 .product-card button:disabled {
-  background-color: grey;
+  background-color: gray;
 }
 
 .cart-main{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    min-height: 40vh;
+    flex: 3;
+}
+
+.ID-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:8px;
+}
+
+/*price detail */
+
+.cartMain-priceDetail{
+  display: flex;
+  align-items:start;
+  
+}
+
+
+.price-detail{
+  width: 400px;
+  background: white;
+  padding: 20px;
+  flex: 1;
+}
+
+.price{
+  display: flex;
+  justify-content: space-between;
+}
+.discount{
+  display: flex;
+  justify-content:space-between;
+}
+.total-price{
+  display: flex;
+  justify-content: space-between;
+}
+
+.place-order-btn{
+  width: 100%;
+  border:none;
+  padding:14px;
+  color: white;
+  background: #fb641b;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  
 }

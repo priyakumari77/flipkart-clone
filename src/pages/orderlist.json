@@ -1,0 +1,125 @@
+
+[
+    {
+        "_id": "686cdeb508a07b02a3dccffa",
+        "totalAmount": 1992,
+        "orderStatus": "Placed",
+        "createdAt": "2025-07-08T09:02:45.507Z",
+        "products": [
+            {
+                "count": 1,
+                "product": {
+                    "_id": "6863981c955342579efa153a",
+                    "name": "Embellished, Striped, Printed Leheria Georgette Saree",
+                    "price": 332,
+                    "description": "This elegant striped saree features a contemporary design with a subtle tie-dye effect, making it a versatile addition to your ethnic wardrobe. Crafted from soft, breathable fabric, it drapes gracefully and offers all-day comfort. The saree comes with a matching blouse piece, allowing you to customize your look. Perfect for festive occasions, casual gatherings, or office wear, this saree effortlessly blends traditional charm with modern style.",
+                    "highlights": "<ul> <li>Stylish striped pattern with a subtle tie-dye effect</li> <li>Soft, breathable fabric for comfortable wear</li> <li>Includes matching blouse piece for a complete look</li> <li>Graceful drape suitable for various occasions</li> <li>Available in two attractive color options</li> <li>Perfect for festive events, casual outings, and office wear</li> <li>Easy to accessorize with traditional or contemporary jewelry</li> </ul>",
+                    "category": "Fashion",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1751357467/ldkf9xos6j8uzrjvwm04.webp",
+                    "color": "purple"
+                }
+            },
+            {
+                "count": 1,
+                "product": {
+                    "_id": "68638f5fcde33997e73dd353",
+                    "name": "Women Floral Print Viscose Rayon Straight Kurta  (Purple)",
+                    "price": 379,
+                    "description": "This beautiful Kurta, Salwar & Dupatta set features a charming lavender color with an all-over white floral print, creating a fresh and graceful look. The kurta has a straight cut with three-quarter sleeves and a notched neckline, offering a blend of comfort and style. Paired with a classic white salwar and a matching lavender dupatta, this ensemble is perfect for daily wear, office, or casual outings. The soft, breathable fabric ensures comfort throughout the day, while the elegant print adds a touch of sophistication to your wardrobe.",
+                    "highlights": "<ul> <li>Charming lavender color with white floral print</li> <li>Straight-cut kurta with three-quarter sleeves</li> <li>Comfortable white salwar for a classic look</li> <li>Matching lavender dupatta completes the set</li> <li>Soft, breathable fabric for all-day comfort</li> <li>Ideal for daily wear, office, or casual outings</li> <li>Easy to style with minimal accessories</li> </ul>",
+                    "category": "Fashion",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1751355231/xhejit8mp6lsj6snyk9x.webp",
+                    "size": "XS"
+                }
+            },
+            {
+                "count": 1,
+                "product": {
+                    "_id": "685d429b323baf05c45a1a68",
+                    "name": "Men Slim Fit Solid Spread Collar Formal Shirt",
+                    "price": 599,
+                    "description": "Comfortable Fabric \\n\\n\nLook dapper in this perfectly tailored shirt from Stoneberg. This shirt is made of a cotton blend fabric that will keep you comfortable and smooth all day. The shirt is ideal for all occasions and makes you selfie-ready in no time. The slim-fit style of the shirt gives it a neat and sleek outlook, and the pleasant colour makes it a must-have option in your formal wardrobe. \\n\\n\\n\nEasy to Care \\n\\n\nThis shirt is easy to take care of. Choose a gentle machine wash and always dry the shirt in the shade. This can help the colour last longer. Wash it with like colours to avoid colour bleeding. You can use a steam iron to give the shirt a bright and neat look. Get compliments and look classy by just pairing it up with sleek trousers.",
+                    "highlights": "<ul> <li><strong>Comfortable Fabric:</strong> Crafted from a premium cotton blend for all-day comfort and a smooth feel.</li> <li><strong>Perfect Tailoring:</strong> Slim-fit design offers a neat, sleek, and modern silhouette.</li> <li><strong>Versatile Style:</strong> Ideal for all occasions, from formal meetings to casual outings.</li> <li><strong>Attractive Color:</strong> Pleasant color makes it a must-have addition to your formal wardrobe.</li> <li><strong>Easy Maintenance:</strong> Gentle machine washable and best dried in the shade to preserve color vibrancy.</li> <li><strong>Color Protection:</strong> Wash with similar colors to prevent color bleeding.</li> <li><strong>Effortless Ironing:</strong> Use a steam iron for a crisp, bright, and polished look.</li> <li><strong>Style Ready:</strong> Instantly selfie-ready and easy to pair with sleek trousers for a classy appearance.</li> </ul>",
+                    "category": "Fashion",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1750942358/rgwughj49wl68f5a7c7r.jpg",
+                    "color": "peacock blue",
+                    "size": "M"
+                }
+            },
+            {
+                "count": 1,
+                "product": {
+                    "_id": "685d4096323baf05c45a1a5f",
+                    "name": "Men Solid Round Neck Pure Cotton Dark Green T-Shirt",
+                    "price": 500,
+                    "description": "Elevate your everyday wardrobe with our Classic Unisex T-Shirt, crafted from 100% premium cotton for unbeatable comfort and durability. Featuring a timeless crew neck design and available in a wide range of vibrant colors—including black, white, navy blue, red, grey, green, and yellow—this versatile tee offers a relaxed fit that suits all body types and occasions. Easy to care for and machine washable, it retains its shape and color wash after wash, making it the perfect staple for layering or wearing on its own. Available in sizes S to XXL, this t-shirt is your go-to choice for effortless style and comfort every day.",
+                    "highlights": "<ul> <li><strong>High-Quality Material:</strong> Made from 100% pure cotton for all-day comfort.</li> <li><strong>Versatile Fit:</strong> Unisex design suitable for all body types.</li> <li><strong>Vibrant Color Options:</strong> Choose from a wide range of colors to match your unique style.</li> <li><strong>Durable & Easy Care:</strong> Machine washable and built to last, retaining its shape and color wash after wash.</li> <li><strong>Classic Crew Neck:</strong> Timeless design that pairs effortlessly with jeans, shorts, or skirts.</li> </ul>",
+                    "category": "Fashion",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1750941844/fxezvfkkxpsut3xbnd7x.jpg",
+                    "color": "purple",
+                    "size": "M"
+                }
+            },
+            {
+                "count": 1,
+                "product": {
+                    "_id": "685d32b13576391ddcc22f26",
+                    "name": "COLORS QUEEN Color Stay Long Lasting Non Transfer Waterproof Matte Lipstick  (Bridal Mehroon, 2.1 g)",
+                    "price": 182,
+                    "description": "The lipstick of your fantasies is here, presenting Colors Queen Color Stay Long Lasting Non Transfer Matte Lipstick a more than perfect 12-15 hrs non transfer lipstick, Its creamy matte texture, lustrous, moistures and water resistant formula gives your lips flawless finish. Discover a long lasting matte lipstick keeps your lips moisturized. Colors Queen Colors Stay matte lipstick comes in 26 trendy shades. A perfect match for a woman who wants to look bold and make the best of herself. This Non Transfer Matte lipsticks promises an unbeatable indulgent experience of intense color and nourishing formula.",
+                    "highlights": "<ul><li> Gives a Matte finish look</li><li>Texture is: Crayon</li><li>Quantity: 2.1 g</li><li>Long Lasting, Non Transfer, Waterproof, Smudge Proof, Matte Finish</li></ul>",
+                    "category": "Beauty & Makeup",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1750938288/rz87xizysuzvm1vqmpvy.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "686cdba408a07b02a3dcc88a",
+        "totalAmount": 1880,
+        "orderStatus": "Placed",
+        "createdAt": "2025-07-08T08:49:40.102Z",
+        "products": [
+            {
+                "count": 2,
+                "product": {
+                    "_id": "685d429b323baf05c45a1a68",
+                    "name": "Men Slim Fit Solid Spread Collar Formal Shirt",
+                    "price": 599,
+                    "description": "Comfortable Fabric \\n\\n\nLook dapper in this perfectly tailored shirt from Stoneberg. This shirt is made of a cotton blend fabric that will keep you comfortable and smooth all day. The shirt is ideal for all occasions and makes you selfie-ready in no time. The slim-fit style of the shirt gives it a neat and sleek outlook, and the pleasant colour makes it a must-have option in your formal wardrobe. \\n\\n\\n\nEasy to Care \\n\\n\nThis shirt is easy to take care of. Choose a gentle machine wash and always dry the shirt in the shade. This can help the colour last longer. Wash it with like colours to avoid colour bleeding. You can use a steam iron to give the shirt a bright and neat look. Get compliments and look classy by just pairing it up with sleek trousers.",
+                    "highlights": "<ul> <li><strong>Comfortable Fabric:</strong> Crafted from a premium cotton blend for all-day comfort and a smooth feel.</li> <li><strong>Perfect Tailoring:</strong> Slim-fit design offers a neat, sleek, and modern silhouette.</li> <li><strong>Versatile Style:</strong> Ideal for all occasions, from formal meetings to casual outings.</li> <li><strong>Attractive Color:</strong> Pleasant color makes it a must-have addition to your formal wardrobe.</li> <li><strong>Easy Maintenance:</strong> Gentle machine washable and best dried in the shade to preserve color vibrancy.</li> <li><strong>Color Protection:</strong> Wash with similar colors to prevent color bleeding.</li> <li><strong>Effortless Ironing:</strong> Use a steam iron for a crisp, bright, and polished look.</li> <li><strong>Style Ready:</strong> Instantly selfie-ready and easy to pair with sleek trousers for a classy appearance.</li> </ul>",
+                    "category": "Fashion",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1750942358/rgwughj49wl68f5a7c7r.jpg",
+                    "color": "peacock blue",
+                    "size": "M"
+                }
+            },
+            {
+                "count": 1,
+                "product": {
+                    "_id": "685d4096323baf05c45a1a5f",
+                    "name": "Men Solid Round Neck Pure Cotton Dark Green T-Shirt",
+                    "price": 500,
+                    "description": "Elevate your everyday wardrobe with our Classic Unisex T-Shirt, crafted from 100% premium cotton for unbeatable comfort and durability. Featuring a timeless crew neck design and available in a wide range of vibrant colors—including black, white, navy blue, red, grey, green, and yellow—this versatile tee offers a relaxed fit that suits all body types and occasions. Easy to care for and machine washable, it retains its shape and color wash after wash, making it the perfect staple for layering or wearing on its own. Available in sizes S to XXL, this t-shirt is your go-to choice for effortless style and comfort every day.",
+                    "highlights": "<ul> <li><strong>High-Quality Material:</strong> Made from 100% pure cotton for all-day comfort.</li> <li><strong>Versatile Fit:</strong> Unisex design suitable for all body types.</li> <li><strong>Vibrant Color Options:</strong> Choose from a wide range of colors to match your unique style.</li> <li><strong>Durable & Easy Care:</strong> Machine washable and built to last, retaining its shape and color wash after wash.</li> <li><strong>Classic Crew Neck:</strong> Timeless design that pairs effortlessly with jeans, shorts, or skirts.</li> </ul>",
+                    "category": "Fashion",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1750941844/fxezvfkkxpsut3xbnd7x.jpg",
+                    "color": "purple",
+                    "size": "M"
+                }
+            },
+            {
+                "count": 1,
+                "product": {
+                    "_id": "685d32b13576391ddcc22f26",
+                    "name": "COLORS QUEEN Color Stay Long Lasting Non Transfer Waterproof Matte Lipstick  (Bridal Mehroon, 2.1 g)",
+                    "price": 182,
+                    "description": "The lipstick of your fantasies is here, presenting Colors Queen Color Stay Long Lasting Non Transfer Matte Lipstick a more than perfect 12-15 hrs non transfer lipstick, Its creamy matte texture, lustrous, moistures and water resistant formula gives your lips flawless finish. Discover a long lasting matte lipstick keeps your lips moisturized. Colors Queen Colors Stay matte lipstick comes in 26 trendy shades. A perfect match for a woman who wants to look bold and make the best of herself. This Non Transfer Matte lipsticks promises an unbeatable indulgent experience of intense color and nourishing formula.",
+                    "highlights": "<ul><li> Gives a Matte finish look</li><li>Texture is: Crayon</li><li>Quantity: 2.1 g</li><li>Long Lasting, Non Transfer, Waterproof, Smudge Proof, Matte Finish</li></ul>",
+                    "category": "Beauty & Makeup",
+                    "image": "https://res.cloudinary.com/dizp9yo1l/image/upload/v1750938288/rz87xizysuzvm1vqmpvy.jpg"
+                }
+            }
+        ]
+    }
+]

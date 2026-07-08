@@ -1,16 +1,21 @@
 .home_main{
     /* background: rgb(230, 226, 226); */
-      background: white;
+      /* background: grey; */
     height: 100%;
+    background-color: rgba(128, 128, 128, 0.103)
     
 }
 .home_categories{
     display: flex;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 10px;
     background: white;
     justify-content: center;
     align-items: baseline;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    /* border-radius: 10px; */
    
     
 }
@@ -21,9 +26,13 @@
  flex-direction: column;
  align-items: center;
  justify-content: end;
+ text-align: center;
+ cursor: pointer;
+ 
  
 }
 
 .categories_item img{
-  flex:1;
+height: 100px;
+width: 100px;
 }

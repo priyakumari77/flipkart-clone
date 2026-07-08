@@ -4,21 +4,201 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import { BiSolidCoupon } from "react-icons/bi";
 import { FaTag } from "react-icons/fa6";
 import "../css/productdetails.css";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/slice/cartSlice";
+import { use, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { addToCart } from "../redux/slice/cartSlice";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { message } from "antd";
+import { Spin } from "antd";
 
 const ProductDetails = () => {
+  const [product, setProduct] = useState(null)
+  const [color, setColor] = useState(null)
+  const [size, setselectedSize] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  const [messageApi, contextHolder] = message.useMessage()
+  const navigate = useNavigate()
+
+  const { id } = useParams()
+
+  async function fetchProductDetail() {
+    try {
+      setLoading(true)
+      const res = await axios.get("https://flipkert-backend.onrender.com/user/fetch-single-product", {
+        params: { "productId": id, }
+      })
+      console.log(res.data)
+      setProduct(res.data.data)
+
+      if (res.data.data.colorCategory) {
+        setColor(res.data.data.colorCategory[0].color)
+      }
+      if (res.data.data.sizeCategory) {
+        setselectedSize(res.data.data.sizeCategory[0].size)
+      }
+
+      setLoading(false)
+
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchProductDetail()
+  }, [])
+
+
+  async function addtocart() {
+    try {
+      setLoading(true)
+      const token = localStorage.getItem("token")
+      if (token) {
+        const res = await axios.post("https://flipkert-backend.onrender.com/user/add-to-cart", {
+          productId: product._id,
+          color: color,
+          size: size,
+        }, {
+          headers: { authorization: token }
+        })
+        console.log(res.data)
+        messageApi.success("Item added to cart")
+        setTimeout(() => { navigate("/cart") }, 1000)
+
+      }
+      else {
+        messageApi.error("You have to login first!")
+        setTimeout(() => { navigate("/login") }, 1000)
+      }
+
+      setLoading(false)
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+
+  async function buySingleProduct() {
+    try {
+      setLoading(true)
+      const token = localStorage.getItem("token")
+      if (token) {
+        const res = await axios.post("https://flipkert-backend.onrender.com/user/place-single-order", {
+          productId: product._id,
+          color: color,
+          size: size,
+        }, {
+          headers: { authorization: token }
+        })
+        console.log(res.data)
+        messageApi.success("Order Placed")
+        setTimeout(() => { navigate("/orders") }, 1000)
+      }
+      else {
+        messageApi.error("You have to login first!")
+        setTimeout(() => { navigate("/login") }, 1000)
+      }
+
+      setLoading(false)
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+
+  //payment
+  async function processingPayment() {
+    const token = localStorage.getItem("token")
+    setLoading(true)
+    const { data } = await axios.post(
+
+      "https://flipkert-backend.onrender.com/user/create-payment-order",
+      {
+        amount: Number(product.price),
+        currency: "INR",
+        receipt: "receipt#1",
+        notes: {},
+      },
+      {
+        headers: {
+          authorization: token,
+        }
+      }
+    );
+
+    setLoading(false)
+
+    console.log(data)
+
+    const options = {
+      key: "rzp_test_B9RwKdpPVSHcZx",
+      amount: data.data.amount,
+      currency: data.data.currency,
+      name: "flipkart",
+      description: "abcd",
+      order_id: data.data.id,
+      handler: async (response) => {
+        let verifyResponse = await axios.post(
+          "https://flipkert-backend.onrender.com/user/verify-payment",
+          {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+          },
+          {
+            headers: {
+              authorization: token,
+            }
+          }
+        );
+        // Payload.paymentId = response.razorpay_payment_id;
+        if (verifyResponse.data.success) {
+          await buySingleProduct();
+          // console.log("Order Response", response);
+          // setOrder(JSON.stringify(response.data.data));
+          navigate("/orders");
+          messageApi.success("Order Placed successfully!", {
+            // position: "top-center",
+            // timeout: 3000,
+          });
+        } else {
+          // router.push("/paymentFailed");
+
+          messageApi.error("Failed to place the order. Please try again.", {
+            position: "top-center",
+            timeout: 3000,
+          });
+        }
+      },
+      prefill: {
+        name: "Keya Tarafdar",
+        email: "keya@gmail.com",
+        contact: "9999999999",
+      },
+      theme: {
+        color: "#F37254",
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  }
 
 
 
-  const location = useLocation()  //data receive
-  const product = location.state.product
-  const initialVariant = location.state.selectedVariant
-  const [color, setColor] = useState(initialVariant.color)
-  const [selectedsize, setselectedSize] = useState(initialVariant.size)
-  console.log(location.state)
+
+  //  const location = useLocation()  //data receive
+  //  const product = location.state.product 
+  //  const initialVariant = location.state.selectedVariant
+  //  const[color,setColor] = useState(initialVariant.color)
+  //  const[selectedsize,setselectedSize] = useState(initialVariant.size)
+  //  console.log(location.state)
   //  const product = {
   //   id: 1,
   //   name: "Nike Air Max",
@@ -54,64 +234,57 @@ const ProductDetails = () => {
   //   ]
   // };
 
-  const dispatch = useDispatch()
+  // const dispatch=useDispatch()
 
-  function getSelectedvarient() {
-    console.log(product)
-    const variant = product.variants.find((item) => item.color === color)
-    console.log(variant)
-    return variant
+  // function getSelectedvarient(){
+  //     const variant = product.variants.find((item)=>item.color===color)
+  //     console.log(variant)
+  //     return variant
 
-  }
+  // }
 
-  console.log(selectedsize, 'selectedsize')
+  // console.log(selectedsize,'selectedsize')
 
-  function getSelectedsizeobj() {
-    const variant = getSelectedvarient()
-    const size = variant.sizes.find((item) => {
-      return item.size === selectedsize
-    })
-    console.log(size)
-    console.log(variant)
-    return size
-  }
+  // function getSelectedsizeobj(){
+  //      const variant = getSelectedvarient()
+  //     const size = variant.sizes.find((item)=>{
+  //         return item.size===selectedsize
+  //      })
+  //      console.log(size)
+  //      console.log(variant)
+  //      return size
+  // }
 
-  function getDiscountPercent(originalPrice, discountedPrice) {
-    if (!originalPrice || originalPrice <= 0) return 0;
-    const discount = ((originalPrice - discountedPrice) / originalPrice) * 100;
-    return Math.round(discount); // return rounded percentage
-  }
-  const sizeObj = getSelectedsizeobj()
-  const price = sizeObj.price
-  const sellingPrice = sizeObj.sellingPrice
-  const discountPercent = getDiscountPercent(price, sellingPrice)
+  // function getDiscountPercent(originalPrice, discountedPrice) {
+  //   if (!originalPrice || originalPrice <= 0) return 0;
+  //   const discount = ((originalPrice - discountedPrice) / originalPrice) * 100;
+  //   return Math.round(discount); // return rounded percentage
+  // }
+  // const sizeObj = getSelectedsizeobj()
+  // const price = sizeObj.price
+  // const sellingPrice = sizeObj.sellingPrice
+  // const discountPercent = getDiscountPercent(price,sellingPrice)
+  // const selectedVariant = getSelectedvarient()
 
+  const imgurl = product && product.colorCategory && product.colorCategory.find((colorObj) => color === colorObj.color)
 
-  const selectedVariant = getSelectedvarient()
-
-  //
   return (
     <div className="productdetails-main">
       <div className="left-section">
 
-        <div className="product-img">
-          <img src={selectedVariant.image}></img>
+        <div className="product-img" style={{ paddingLeft: "5px" }}>
+          <img src={(imgurl && imgurl.image) ?? (product && product.image)}></img>
+
         </div>
 
-        <div className="button">
-          <button className="addtocart-button" onClick={() => {
-            dispatch(addToCart({
-              product, selectedProduct: {
-                color: color,
-                size: selectedsize,
+        <div className="button" style={{ paddingLeft: "5px" }}>
 
-              }
-            }))
-          }}>
+          {contextHolder}
+          <button onClick={() => { addtocart() }} className="addtocart-button" >
             <PiShoppingCartFill className="addtocart-icon" />
             ADD TO CART
           </button>
-          <button className="buynow-button">
+          <button onClick={() => { processingPayment() }} className="buynow-button">
             <AiFillThunderbolt className="buynow-icon" />
             BUY NOW
           </button>
@@ -119,41 +292,67 @@ const ProductDetails = () => {
       </div>
       <div className="right-section">
         <h3>
-          {product.name}
+          {product?.name}
         </h3>
-        <div className="ratings-review">
+        {/* <div className="ratings-review">
           <div className="ratings">
             {product.ratings} <FaStar />
           </div>
           <div className="review-count">{product.ratingCount} Ratings & {product.review} Review</div>
-        </div>
+        </div> */}
         <div className="price-row">
-          <p>₹{sellingPrice} </p>
-          <h5>₹{price}</h5>
-          <h6>{discountPercent}% off</h6>
+          <p>₹{product && product.price} </p>
+          {/* <h5>₹{price}</h5>
+          <h6>{discountPercent}% off</h6> */}
         </div>
 
-        <div className="color-box">
+        {product && product.colorCategory && <div className="color-box">
           <h4>Color</h4>
           <div className="color-list">
-            {product.variants.map((item) => {
-              // const selectedVariant = getSelectedvarient() 
-              return <div id={item.color} className={`color-item ${selectedVariant.color === item.color ? "selectedColor" : " "}`} onClick={() => { setColor(item.color) }}> <img src={item.image} /></div>
+            {product && product.colorCategory && product.colorCategory.map((item, index) => {
+
+              return <div key={index} className={`color-item ${color === item.color && "selectedColor"}`} onClick={() => { setColor(item.color) }}> <img src={item.image} /></div>
 
             })}
 
           </div>
-        </div>
-        <div className="prod-size">
+        </div>}
+
+        {product && product.sizeCategory && <div className="prod-size">
           <h4>Size</h4>
           <div className="product-size">
-            {selectedVariant.sizes.map((item) => {
-              return <div className={`p-size  ${sizeObj.size === item.size ? "selectedColor" : " "}`} onClick={() => { setselectedSize(item.size) }}>{item.size}</div>
+            {product && product.sizeCategory && product.sizeCategory.map((item, index) => {
+              return <div key={index} className={`p-size ${size === item.size && "selectedColor"}`} onClick={() => { setselectedSize(item.size) }}>{item.size}</div>
             })}
+          </div>
+        </div>}
+
+
+        <div className="hightlight-section">
+          <h4>Highlights</h4>
+          <div className="list-section">
+            <div
+              className="product-highlights"
+              dangerouslySetInnerHTML={{ __html: product && product.highlights }}
+            ></div>
+
           </div>
         </div>
 
+        <div className="description-style">
+          <h4>Description</h4>
+          <p>
+            {product && product.description}
+          </p>
+        </div>
 
+        <div className="Important-notes">
+          <h4>Important Notes</h4>
+          <p>
+            For multicolor products, please check the image for colour details
+            before purchasing.
+          </p>
+        </div>
 
         <div className="offers">
           <h3>Coupons for you</h3>
@@ -187,33 +386,15 @@ const ProductDetails = () => {
           </p>
         </div>
 
-        <div className="hightlight-section">
-          <h4>Highlights</h4>
-          <div className="list-section">
-            {product.highlights.map((item) => {
-              return <li>{item}</li>
-            })}
-          </div>
 
-        </div>
-        <div className="Important-notes">
-          <h4>Important Notes</h4>
-          <p>
-            For multicolor products, please check the image for colour details
-            before purchasing.
-          </p>
-        </div>
-
-        <div className="description-style">
-          <h4>Description</h4>
-          <p>
-            {product.description}
-          </p>
-        </div>
+        <Spin size='large' fullscreen spinning={loading} />
 
       </div>
     </div>
   );
+
+
 };
+
 
 export default ProductDetails;
